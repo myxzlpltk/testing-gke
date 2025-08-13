@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/adam/testing-gke:latest', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/adam/testing-gke:latest']
+images:
+- 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/adam/testing-gke:latest'
+options:
+  logging: CLOUD_LOGGING_ONLY
